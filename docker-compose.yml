@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  # AC電源接続時のサービス
+  app-ac:
+    # ローカルの full-power ディレクトリにあるDockerfile を使ってビルドする
+    build: ./full-power
+    # ビルドしたイメージにローカルで付ける名前
+    image: my-app:full-power
+    container_name: my-app-container
+    restart: unless-stopped
+
+  # バッテリー駆動時のサービス
+  app-battery:
+    # ローカルの low-power ディレクトリにあるDockerfile を使ってビルドする
+    build: ./low-power
+    # ビルドしたイメージにローカルで付ける名前
+    image: my-app:low-power
+    container_name: my-app-container
+    restart: unless-stopped
