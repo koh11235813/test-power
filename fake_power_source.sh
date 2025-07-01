@@ -1,23 +1,19 @@
 #!/usr/bin/env bash
 
-# 現在の状態を保存しておくファイル
-STATE_FILE="/tmp/power_state.txt"
+# 各状態を維持する時間（秒）
+INTERVAL=60
 
-# 状態ファイルがなければ、最初の状態を「BATTERY」として作成
-# (これにより、初回の実行で「AC」が出力される)
-if [[ ! -f "$STATE_FILE" ]]; then
-    echo "BATTERY" > "$STATE_FILE"
-fi
+# 現在のUNIXタイムスタンプ（1970年1月1日からの経過秒数）を取得
+TIMESTAMP=$(date +%s)
 
-# 現在の状態をファイルから読み込む
-CURRENT_STATE=$(cat "$STATE_FILE")
+# タイムスタンプをインターバルで割り、現在の「時間帯ID」を計算
+# このIDは30秒ごとに1つずつ増えていく数値になる
+CYCLE_ID=$((TIMESTAMP / INTERVAL))
 
-# 状態を反転させて、新しい状態をファイルに書き込み、標準出力にも表示する
-if [[ "$CURRENT_STATE" == "AC" ]]; then
-    echo "BATTERY" > "$STATE_FILE"
-    echo "BATTERY"
+# 時間帯IDが偶数か奇数かで出力を決定する
+# これにより、30秒ごとにACとBATTERYが自動で切り替わる
+if (( CYCLE_ID % 2 == 0 )); then
+  echo "AC"
 else
-    echo "AC" > "$STATE_FILE"
-    echo "AC"
+  echo "BATTERY"
 fi
-
