@@ -1,0 +1,296 @@
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.1
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+--- YOLO Daemon Started ---
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 28) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 30) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 32) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 34) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 36) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 38) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 40) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 42) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 44) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 46) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 48) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 50) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 52) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 54) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 56) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 58) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 60) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 62) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 64) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 66) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 68) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 70) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 72) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 74) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 76) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 78) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 80) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 82) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 84) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 86) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 88) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.1
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+--- YOLO Daemon Started ---
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 28) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 30) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 32) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 34) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 36) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 38) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 40) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 42) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 44) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 46) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 48) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 50) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 52) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 54) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 56) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 58) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 60) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 62) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 64) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 66) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 68) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 70) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 72) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 74) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 76) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 78) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 80) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 82) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 84) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 86) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 88) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 90) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 92) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 94) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.
+--------------------------------
+Loop Start. Current Mode: LOW
+Started YOLO (PID: 96) in LOW mode.
+YOLO process finished. Restarting loop after a short delay.

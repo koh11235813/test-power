@@ -1,0 +1,12 @@
+# Jetson用のPyTorch付き公式イメージをベースにする (JetPack 6.0 DP / L4T r36.2.0 向け)
+FROM nvcr.io/nvidia/l4t-pytorch:r36.2.0-pth2.1-py3
+
+# Ultralyticsライブラリをインストール
+# (PyTorchやその他依存関係はベースイメージに含まれている)
+RUN pip3 install ultralytics
+
+# デーモンスクリプトをコピー
+COPY yolo_daemon.sh /yolo_daemon.sh
+RUN chmod +x /yolo_daemon.sh
+
+CMD ["/yolo_daemon.sh"]

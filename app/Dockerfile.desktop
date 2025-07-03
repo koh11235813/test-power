@@ -1,0 +1,24 @@
+# NVIDIAの公式CUDAイメージをベースにする
+FROM nvidia/cuda:12.4.1-cudnn-devel-ubuntu22.04
+
+# 対話形式のプロンプトを無効化
+ENV DEBIAN_FRONTEND=noninteractive
+
+# 必要なパッケージをインストール
+RUN apt-get update && apt-get install -y \
+    python3.10 \
+    python3-pip \
+    git \
+    # 【追加】OpenCVの依存関係で不足しているライブラリ
+    libgl1-mesa-glx \
+    # 不要なキャッシュを削除
+    && rm -rf /var/lib/apt/lists/*
+
+# Ultralyticsライブラリをインストール
+RUN pip3 install ultralytics
+
+# デーモンスクリプトをコピー
+COPY yolo_daemon.sh /yolo_daemon.sh
+RUN chmod +x /yolo_daemon.sh
+
+CMD ["/yolo_daemon.sh"]
