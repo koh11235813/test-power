@@ -17,3 +17,4 @@ if (( CYCLE_ID % 2 == 0 )); then
 else
   echo "BATTERY"
 fi
+

@@ -9,9 +9,13 @@ RUN apt-get update && apt-get install -y \
     python3.10 \
     python3-pip \
     git \
-    # 【追加】OpenCVの依存関係で不足しているライブラリ
+    # --- OpenCVの一般的な依存関係をまとめてインストール ---
     libgl1-mesa-glx \
-    # 不要なキャッシュを削除
+    libglib2.0-0 \
+    libsm6 \
+    libxext6 \
+    libxrender-dev \
+    # ----------------------------------------------------
     && rm -rf /var/lib/apt/lists/*
 
 # Ultralyticsライブラリをインストール
