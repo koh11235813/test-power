@@ -6,3 +6,6 @@ services:
       context: ./app
       dockerfile: Dockerfile.jetson
     runtime: nvidia
+    volumes:
+      - /usr/local/cuda-12.6:/usr/local/cuda-12.6
+
