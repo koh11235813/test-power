@@ -53,6 +53,8 @@ RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/arm
 
 ENV USE_CUDA=1 USE_CUDNN=1 USE_MKLDNN=1 TORCH_CUDA_ARCH_LIST="8.7" FORCE_CUDA=1 FORCE_MPS=1
 
+RUN pip3 install ninja ffmpeg pynvjpeg
+
 # PyTorch 2.5に対応するtorchvision v0.20.0を、正しいCUDAパスを指定してインストール
 RUN git clone --branch v0.20.0 https://github.com/pytorch/vision torchvision \
     && cd torchvision \
