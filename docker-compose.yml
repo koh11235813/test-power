@@ -5,7 +5,7 @@ services:
     # appディレクトリのDockerfileを使ってビルド
     build: ./app
     # コンテナ名を固定して、ホストからアクセスしやすくする
-    container_name: my-app-container
+    container_name: test-power
     restart: unless-stopped
     # シグナルを正しく処理するために `init` を有効化 (重要)
     init: true

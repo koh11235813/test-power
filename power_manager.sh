@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # 操作対象のコンテナ名
-CONTAINER_NAME="my-app-container"
+CONTAINER_NAME="test-power"
 
 echo "--- Power Manager (Signal Mode) Started ---"
 echo "Will send signals to container '$CONTAINER_NAME' to switch modes."

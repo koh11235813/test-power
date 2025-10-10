@@ -46,14 +46,14 @@ RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/arm
     && rm cuda-keyring_1.1-1_all.deb \
     && apt-get update \
     && apt-get -y install libcusparselt0 libcusparselt-dev \
-    libcublas-12-6 \
+    libcublas-12-6\
     libnvtoolsext1 \
     cuda-libraries-12-6 \
     cuda-12-6
 
 ENV USE_CUDA=1 USE_CUDNN=1 USE_MKLDNN=1 TORCH_CUDA_ARCH_LIST="8.7" FORCE_CUDA=1 FORCE_MPS=1
 
-RUN pip3 install ninja ffmpeg pynvjpeg
+# RUN pip3 install ninja ffmpeg pynvjpeg
 
 # PyTorch 2.5に対応するtorchvision v0.20.0を、正しいCUDAパスを指定してインストール
 RUN git clone --branch v0.20.0 https://github.com/pytorch/vision torchvision \

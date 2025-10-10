@@ -5,17 +5,14 @@ FROM nvidia/cuda:12.4.1-cudnn-devel-ubuntu22.04
 ENV DEBIAN_FRONTEND=noninteractive
 
 # 必要なパッケージをインストール
-RUN apt-get update && apt-get install -y \
-    python3.10 \
+RUN apt-get update && apt-get install -y python3.10 \
     python3-pip \
     git \
-    # --- OpenCVの一般的な依存関係をまとめてインストール ---
     libgl1-mesa-glx \
     libglib2.0-0 \
     libsm6 \
     libxext6 \
-    libxrender-dev \
-    # ----------------------------------------------------
+    libxrender-dev 
     && rm -rf /var/lib/apt/lists/*
 
 # Ultralyticsライブラリをインストール
