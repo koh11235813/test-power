@@ -33,6 +33,7 @@ docker-compose -f docker-compose.yml -f docker-compose-desktop.yml up -d --build
 
 #### Jetson
 ```bash
+# Jetson Orin Nano developerでおよそ40分ほどかかります
 docker-compose -f docker-compose.yml -f docker-compose-jetson.yml up -d --build
 ```
 > ※ Jetson の CUDA パス（例: `/usr/local/cuda-12.6`）のマウント設定は、環境に合わせて必要なら調整してください。
