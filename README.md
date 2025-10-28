@@ -72,7 +72,7 @@ chmod +x power_manager.sh fake_power_source.sh
 ```bash
 # 例: デスクトップ
 export COMPOSE_FILE=docker-compose.yml:docker-compose-desktop.yml
-docker compose up -d --build
+docker-compose up -d --build
 ```
 
 ---
