@@ -37,9 +37,9 @@ while true; do
 
     # モードに応じて実行するYOLOコマンドを決定
     if [[ "$CURRENT_MODE" == "FULL" ]]; then
-        yolo predict model=yolov8s.pt source='https://ultralytics.com/images/bus.jpg' &
+        yolo segment predict model='nvidia/segformer-b5-finetuned-ade-640-640' source='https://ultralytics.com/images/bus.jpg' &
     else
-        yolo predict model=yolov8n.pt source='https://ultralytics.com/images/bus.jpg' &
+        yolo segment predict model='nvidia/segformer-b0-finetuned-ade-512-512' source='https://ultralytics.com/images/bus.jpg' &
     fi
     
     # バックグラウンドで実行したYOLOのプロセスIDを保存
