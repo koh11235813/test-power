@@ -28,19 +28,19 @@ cd test-power
 
 #### デスクトップ（dGPU）
 ```bash
-docker compose -f docker-compose.yml -f docker-compose-desktop.yml up -d --build
+docker-compose -f docker-compose.yml -f docker-compose-desktop.yml up -d --build
 ```
 
 #### Jetson
 ```bash
-docker compose -f docker-compose.yml -f docker-compose-jetson.yml up -d --build
+docker-compose -f docker-compose.yml -f docker-compose-jetson.yml up -d --build
 ```
 > ※ Jetson の CUDA パス（例: `/usr/local/cuda-12.6`）のマウント設定は、環境に合わせて必要なら調整してください。
 
 ### 3) 停止・ログ
 ```bash
 # 停止・削除
-docker compose -f docker-compose.yml -f docker-compose-<desktop|jetson>.yml down
+docker-compose -f docker-compose.yml -f docker-compose-<desktop|jetson>.yml down
 
 # 稼働状況
 docker compose ps
