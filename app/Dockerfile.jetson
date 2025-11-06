@@ -63,8 +63,8 @@ RUN git clone --branch v0.20.0 https://github.com/pytorch/vision torchvision \
 RUN pip3 install --no-cache-dir ultralytics
 
 # --- ステップ4: デーモンスクリプトを配置 ---
-COPY yolo_daemon.sh /yolo_daemon.sh
-RUN chmod +x /yolo_daemon.sh
+COPY grpc-server.py /grpc-server.py
+RUN chmod +x /grpc-server.py
 
-CMD ["/yolo_daemon.sh"]
+CMD ["/grpc-server.py"]
 

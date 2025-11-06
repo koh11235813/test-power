@@ -9,20 +9,18 @@ RUN apt-get update && apt-get install -y \
     python3.10 \
     python3-pip \
     git \
-    # --- OpenCVの一般的な依存関係をまとめてインストール ---
     libgl1-mesa-glx \
     libglib2.0-0 \
     libsm6 \
     libxext6 \
     libxrender-dev \
-    # ----------------------------------------------------
     && rm -rf /var/lib/apt/lists/*
 
 # Ultralyticsライブラリをインストール
 RUN pip3 install ultralytics
 
 # デーモンスクリプトをコピー
-COPY yolo_daemon.sh /yolo_daemon.sh
-RUN chmod +x /yolo_daemon.sh
+COPY grpc-server.py /grpc-server.py
+RUN chmod +x /grpc-server.py
 
-CMD ["/yolo_daemon.sh"]
+CMD ["/grpc-server.py"]

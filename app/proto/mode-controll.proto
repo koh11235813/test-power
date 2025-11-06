@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+service ModeController {
+  rpc SetMode (ModeRequest) returns (ModeResponse) {}
+}
+
+message ModeRequest {
+  string mode = 1;
+}
+
+message ModeResponse {
+  bool success = 1;
+}
