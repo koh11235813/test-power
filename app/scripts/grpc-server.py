@@ -6,9 +6,13 @@ import os, requests
 from transformers import SegformerImageProcessor, SegformerForSemanticSegmentation
 from PIL import Image
 import torch
+from logging import basicConfig, getLogger, DEBUG
 
 import mode_controll_pb2
 import mode_controll_pb2_grpc
+
+basicConfig(level=DEBUG)
+logger = getLogger(__name__)
 
 TEST_IMAGE_URL = "https://ultralytics.com/images/bus.jpg"
 
@@ -41,7 +45,7 @@ class ModeControllerServicer(mode_controll_pb2_grpc.ModeControllerServicer):
 
         # Predict with SegFormer
         logits = run_inference(model_id, image_path)
-        print(f"{self.current_mode} mode: tensor shape {tuple(logits.shape)}")
+        logger.debug(f"{self.current_mode} mode: tensor shape {tuple(logits.shape)}")
 
     async def SetMode(self, request, context):
         if request.mode not in ("FULL", "LOW"):
@@ -59,6 +63,6 @@ async def serve():
     await server.wait_for_termination()
 
 if __name__ == "__main__":
-    print("gRPC server started")
+    logger.debug('gRPC server started')
     asyncio.run(serve())
 
