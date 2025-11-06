@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y \
     libopenmpi-dev libpostproc-dev libswscale-dev libavdevice-dev libavfilter-dev libavcodec-dev libavutil-dev \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install ultralytics grpcio grpcio-tools
+RUN pip3 install  --no-cache-dir torch torchvision timm pillow grpcio grpcio-tools transformers
 
 COPY scripts/ /scripts
 RUN chmod -R +x /scripts

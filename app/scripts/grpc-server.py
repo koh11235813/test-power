@@ -4,9 +4,23 @@ import asyncio
 from concurrent import futures
 import grpc
 import subprocess
+from transformers import SegformerImageProcessor, SegformerForSemanticSegmentation
+from PIL import Image
+import torch, requests, os
 
 import mode_controll_pb2
 import mode_controll_pb2_grpc
+url = "https://ultralytics.com/images/bus.jpg"
+
+
+def run_inference(model_id, image_path):
+    processor = SegformerImageProcessor.from_pretrained(model_id)
+    model = SegformerForSemanticSegmentation.from_pretrained(model_id)
+    image = Image.open(image_path)
+    inputs = processor(images=image, return_tensors="pt")
+    with torch.no_grad():
+        outputs = model(**inputs)
+    return outputs.logits
 
 class ModeControllerServicer(mode_controll_pb2_grpc.ModeControllerServicer):
     def __init__(self):
@@ -14,22 +28,34 @@ class ModeControllerServicer(mode_controll_pb2_grpc.ModeControllerServicer):
         self.proc = None
 
     async def _restart_process(self):
-        # 既存プロセス終了
         try:
             if self.proc is not None:
                 self.proc.kill()
                 await self.proc.wait()
         except ProcessLookupError:
             pass
-        # モードに応じてモデルを選択
+        #set models
         if self.current_mode == "FULL":
-            cmd = ["yolo", "segment", "predict", "model=nvidia/segformer-b5-finetuned-ade-640-640", "source=https://ultralytics.com/images/bus.jpg"]
+           model_id = "model=nvidia/segformer-b5-finetuned-ade-640-640"
         else:
-            cmd = ["yolo", "segment", "predict", "model=nvidia/segformer-b0-finetuned-ade-512-512", "source=https://ultralytics.com/images/bus.jpg"]
-        self.proc = await asyncio.create_subprocess_exec(*cmd)
+           model_id = "model=nvidia/segformer-b0-finetuned-ade-512-512"
 
-    async def SetMode(self, request, context):
-        # モード更新
+        image_path = "/tmp/bus.jpg"
+
+        response = requests.get(url)
+        response.raise_for_status()
+
+        os.makedirs(os.path.dirname(image_path), exist_ok=True)
+
+        with open(image_path, "wb") as f:
+            f.write(response.content)
+        print(f"saved image: {image_path}")
+
+        logits = run_inference(model_id, image_path)
+        print(f"{self.current_mode} mode: tensor shape: {logits.shape}")
+
+async def SetMode(self, request, context):
+        # reload model
         if request.mode not in ("FULL", "LOW"):
             return mode_controll_pb2.ModeResponse(success=False)
         if request.mode != self.current_mode:
