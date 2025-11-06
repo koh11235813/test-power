@@ -11,3 +11,4 @@ message ModeRequest {
 message ModeResponse {
   bool success = 1;
 }
+
