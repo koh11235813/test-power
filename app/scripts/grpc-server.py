@@ -54,7 +54,7 @@ class ModeControllerServicer(mode_controll_pb2_grpc.ModeControllerServicer):
         logits = run_inference(model_id, image_path)
         print(f"{self.current_mode} mode: tensor shape: {logits.shape}")
 
-async def SetMode(self, request, context):
+    async def SetMode(self, request, context):
         # reload model
         if request.mode not in ("FULL", "LOW"):
             return mode_controll_pb2.ModeResponse(success=False)
