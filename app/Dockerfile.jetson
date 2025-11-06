@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y --fix-missing \
     zlib1g-dev \
     libopenblas-dev \
     libpng-dev \
+    libgl1 \
     ninja-build \
     wget \
     zlib1g-dev \

@@ -15,9 +15,12 @@ class ModeControllerServicer(mode_controll_pb2_grpc.ModeControllerServicer):
 
     async def _restart_process(self):
         # 既存プロセス終了
-        if self.proc is not None:
-            self.proc.kill()
-            await self.proc.wait()
+        try:
+            if self.proc is not None:
+                self.proc.kill()
+                await self.proc.wait()
+        except ProcessLookupError:
+            pass
         # モードに応じてモデルを選択
         if self.current_mode == "FULL":
             cmd = ["yolo", "segment", "predict", "model=nvidia/segformer-b5-finetuned-ade-640-640", "source=https://ultralytics.com/images/bus.jpg"]
@@ -42,5 +45,6 @@ async def serve():
     await server.wait_for_termination()
 
 if __name__ == '__main__':
+    print("gRPC server started")
     asyncio.run(serve())
 

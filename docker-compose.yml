@@ -6,3 +6,5 @@ services:
     container_name: test-power
     restart: unless-stopped
     init: true
+    ports:
+      - 50051:50051

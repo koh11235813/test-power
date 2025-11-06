@@ -8,4 +8,6 @@ services:
     runtime: nvidia
     volumes:
       - /usr/local/cuda-12.6:/usr/local/cuda-12.6
+    ports:
+      - 50051:50051
 
