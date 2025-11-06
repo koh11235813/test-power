@@ -62,8 +62,8 @@ RUN git clone --branch v0.20.0 https://github.com/pytorch/vision torchvision \
 RUN pip3 install --no-cache-dir ultralytics grpcio grpcio-tools
 
 # --- set daemon script---
-COPY grpc-server.py /grpc-server.py
-RUN chmod +x /grpc-server.py
+COPY scripts /scripts
+RUN chmod +x /scripts -R
 
-CMD ["/grpc-server.py"]
+CMD ["python","/scripts/grpc-server.py"]
 

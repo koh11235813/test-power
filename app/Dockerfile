@@ -9,9 +9,9 @@ RUN apt-get update && apt-get install -y \
     \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install ultralytics
+RUN pip3 install ultralytics grpcio grpcio-tools
 
-COPY grpc-server.py /grpc-server.py
-RUN chmod +x grpc-server.py
+COPY scripts/ /scripts
+RUN chmod -R +x /scripts
 
-CMD ["python3 /grpc-server.py"]
+CMD ["python3", "/scripts/grpc-server.py"]
