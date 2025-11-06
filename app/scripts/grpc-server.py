@@ -6,13 +6,17 @@ import os, requests
 from transformers import SegformerImageProcessor, SegformerForSemanticSegmentation
 from PIL import Image
 import torch
-from logging import basicConfig, getLogger, DEBUG
+from logging import basicConfig, getLogger, DEBUG, INFO, WARNING
 
 import mode_controll_pb2
 import mode_controll_pb2_grpc
 
 basicConfig(level=DEBUG)
 logger = getLogger(__name__)
+
+getLogger('urllib3').setLevel(WARNING)
+getLogger('grpc').setLevel(INFO)
+getLogger('filelock').setLevel(INFO)
 
 TEST_IMAGE_URL = "https://ultralytics.com/images/bus.jpg"
 
