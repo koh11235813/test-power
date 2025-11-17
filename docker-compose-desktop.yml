@@ -12,3 +12,5 @@ services:
             - driver: nvidia
               count: 1
               capabilities: [gpu]
+    ports:
+      - 50051:50051

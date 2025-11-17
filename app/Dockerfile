@@ -1,23 +1,23 @@
-# ベースイメージ
 FROM ubuntu:22.04
 
-# 対話形式のプロンプトを無効化
 ENV DEBIAN_FRONTEND=noninteractive
 
-# 必要なライブラリをインストール
 RUN apt-get update && apt-get install -y \
     python3.10 \
     python3-pip \
     git \
-    \
+    libgl1 \
+    libglib2.0-0 \
+    libpng-dev \
+    libjpeg-dev \
+    zlib1g-dev \
+    ninja-build \
+    libopenmpi-dev libpostproc-dev libswscale-dev libavdevice-dev libavfilter-dev libavcodec-dev libavutil-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Ultralyticsライブラリをインストール
-RUN pip3 install ultralytics
+RUN pip3 install  --no-cache-dir torch torchvision timm pillow grpcio grpcio-tools transformers
 
-# デーモンスクリプトをコンテナにコピー
-COPY yolo_daemon.sh /yolo_daemon.sh
-RUN chmod +x /yolo_daemon.sh
+COPY scripts/ /scripts
+RUN chmod -R +x /scripts
 
-# コンテナ起動時にデーモンスクリプトを実行
-CMD ["/yolo_daemon.sh"]
+CMD ["python3", "/scripts/grpc-server.py"]

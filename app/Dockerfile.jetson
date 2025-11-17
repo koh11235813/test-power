@@ -1,10 +1,9 @@
-# Jetson用のPyTorch付き公式イメージをベースにする (JetPack 6.0 DP / L4T r36.3.0 向け)
+# base image
 FROM nvcr.io/nvidia/l4t-jetpack:r36.3.0
 
-# 対話形式のプロンプトを無効化
 # ENV DEBIAN_FRONTEND=noninteractive
 
-# --- ステップ1: 基本的なツールと依存関係をインストール ---
+# ---
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get update && apt-get install -y --fix-missing \
     python3-pip \
@@ -13,6 +12,7 @@ RUN apt-get update && apt-get install -y --fix-missing \
     zlib1g-dev \
     libopenblas-dev \
     libpng-dev \
+    libgl1 \
     ninja-build \
     wget \
     zlib1g-dev \
@@ -43,28 +43,28 @@ RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/arm
     cuda-libraries-12-6 \
     cuda-12-6
 
-# NumPyのバージョンを2.0未満に固定
+# numpy < 2.0
 RUN pip3 install --no-cache-dir "numpy<2.0"
 
-# --- ステップ2: Jetson用のPyTorchと関連ライブラリをインストール ---
+# --- install torch 2.5 build by nVIDIA  ---
 RUN wget https://developer.download.nvidia.com/compute/redist/jp/v61/pytorch/torch-2.5.0a0+872d972e41.nv24.08.17622132-cp310-cp310-linux_aarch64.whl \
     && pip3 install torch-2.5.0a0+872d972e41.nv24.08.17622132-cp310-cp310-linux_aarch64.whl \
     && rm torch-2.5.0a0+872d972e41.nv24.08.17622132-cp310-cp310-linux_aarch64.whl
 
 
-# PyTorch 2.5に対応するtorchvision v0.20.0をインストール
+# install torchvision 0.20.0, depends on torch 2.5
 RUN git clone --branch v0.20.0 https://github.com/pytorch/vision torchvision \
     && cd torchvision \
     && pip3 install .\
     && cd ../ \
     && rm -rf torchvision
 
-# --- ステップ3: ultralyticsをインストール ---
-RUN pip3 install --no-cache-dir ultralytics
+# --- step3: install ultralytics---
+RUN pip3 install --no-cache-dir ultralytics grpcio grpcio-tools
 
-# --- ステップ4: デーモンスクリプトを配置 ---
-COPY yolo_daemon.sh /yolo_daemon.sh
-RUN chmod +x /yolo_daemon.sh
+# --- set daemon script---
+COPY scripts /scripts
+RUN chmod +x /scripts -R
 
-CMD ["/yolo_daemon.sh"]
+CMD ["python","/scripts/grpc-server.py"]
 
